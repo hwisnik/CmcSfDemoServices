@@ -1,0 +1,2 @@
+rem Batch files to run Visual Studio Tests from command line on TeamCity build agent
+C:\"Program Files (x86)\Microsoft Visual Studio"\2017\BuildTools\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe C:\TeamCityBuildAgent\work\8327fa490de3be48\UnitTests\bin\debug\Unit_Tests.dll /Logger:trx /Platform:x86

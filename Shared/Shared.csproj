@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Platforms>AnyCPU;x86;x64</Platforms>
+    <Configurations>Debug;Release;DevDeploy</Configurations>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Entities\Salesforce Entities\**" />
+    <Compile Remove="Entities\SFDb\Scheduling\**" />
+    <Compile Remove="Entities\SFDb\Technician\**" />
+    <EmbeddedResource Remove="Entities\Salesforce Entities\**" />
+    <EmbeddedResource Remove="Entities\SFDb\Scheduling\**" />
+    <EmbeddedResource Remove="Entities\SFDb\Technician\**" />
+    <None Remove="Entities\Salesforce Entities\**" />
+    <None Remove="Entities\SFDb\Scheduling\**" />
+    <None Remove="Entities\SFDb\Technician\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="log4net" Version="2.0.8" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.6.1" />
+  </ItemGroup>
+
+</Project>
