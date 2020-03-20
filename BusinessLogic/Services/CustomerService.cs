@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BusinessLogic.Services.Audit;
 using BusinessLogic.Services.Interfaces;
-using DataAccess.SFInterfaces;
+using DataAccess.Repositories.Interfaces;
 //using DataAccess.SFInterfaces;
 using Shared.Logger;
 using log4net;

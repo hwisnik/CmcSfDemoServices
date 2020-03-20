@@ -236,41 +236,6 @@ namespace CmcSfRestServices.Controllers
             return ReturnFormattedResults(results);
         }
 
-        /// <summary>
-        /// Gets a LeadEntity by LeadGuid
-        /// </summary>
-         /// <returns>LeadEntity in GenericServiceResponse Entity property</returns>
-        [Route("GetMeAGuid", Name = "GetMeAGuid")]
-        //[Authorize(Roles = "SalesforceEnvDev, SalesforceRoleAdmin ,SalesforceRoleScheduler")]
-        [HttpPost]
-        [SwaggerResponse(HttpStatusCode.OK, "It Get's Me a Guid... ", typeof(AGuidForYou))]
-        [SwaggerResponse(HttpStatusCode.InternalServerError,
-            "UpdateLead exception see ServiceResponse.OperationException", typeof(GenericServiceResponse))]
-
-        public async Task<IHttpActionResult> GetMeAGuid()
-        {
-            //UserGuid = GetUserGuidFromHttpContextBase(_httpContextBase);
-            //if (UserGuid == Guid.Empty) return new HttpActionResult(HttpStatusCode.Unauthorized, "User Validation Error");
-
-            //Log the request
-            var logCommand = new LogCommand
-            {
-                User = User,
-                LoggingInstance = _loggingInstance,
-                LogMessage = $"LeadController.GetMeAGuid Starting - No input Parameter"
-            };
-            _logHandler.HandleLog(logCommand);
-
-            //Await the response
-            var results = await _leadService.GetMeAGuidPlease(logCommand);
-            //Log the response
-            logCommand.LogMessage =
-                $"LeadController.GetMeAGuid completed. Output value End of controller";
-            _logHandler.HandleLog(logCommand);
-
-            //Return the results
-            return ReturnFormattedResults(results);
-        }
 
         /// <summary>
         /// Gets a LeadEntity by LeadGuid

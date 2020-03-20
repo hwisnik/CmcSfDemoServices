@@ -8,8 +8,6 @@ using System.Linq;
 using System.Net.Mail;
 using System.Threading.Tasks;
 using BusinessLogic.Services.Interfaces;
-using DataAccess.SFInterfaces;
-using DataAccess.SFRepositories;
 using Shared.Logger;
 
 using log4net;
@@ -17,6 +15,7 @@ using Newtonsoft.Json;
 using Shared.Commands;
 using Shared.Handlers;
 using System.Text.RegularExpressions;
+using DataAccess.Repositories.Interfaces;
 using Shared.Entities.CDCClient;
 using Shared.Entities.DTO.Contact;
 using Shared.Entities.DTO.Customer;
@@ -89,31 +88,6 @@ namespace BusinessLogic.Services
 
                 var lead = await _leadRepository.GetLead(leadGuid, logCommand);
                 var response = ServiceHelper.SetGenericServiceResponseForEntity(lead);
-                response.Success = true;
-
-                logCommand.LogMessage = string.Format($"{Service}.{method} completed");
-                _logHandler.HandleLog(logCommand);
-
-                return response;
-            }
-            catch (Exception ex)
-            {
-                AppLogger.LogException(_loggingInstance, ex.Message, ex);
-                return ServiceHelper.SetErrorGenericServiceResponse(ex);
-            }
-
-        }
-        public async Task<GenericServiceResponse> GetMeAGuidPlease(LogCommand logCommand)
-        {
-            const string method = "GetMeAGuidPlease";
-
-            try
-            {
-                logCommand.LogMessage = string.Format($"{Service}.{method} Starting - No input parameter");
-                _logHandler.HandleLog(logCommand);
-                var getmeaguid = await _leadRepository.GetMeAGuidPlease(logCommand);
-
-                var response = ServiceHelper.SetGenericServiceResponseForEntity(getmeaguid);
                 response.Success = true;
 
                 logCommand.LogMessage = string.Format($"{Service}.{method} completed");
@@ -275,8 +249,8 @@ namespace BusinessLogic.Services
                 _logHandler.HandleLog(logCommand);
                 var recordsAffected = 0;
 
-                var existingLeadEnum = await _leadRepository.GetLeadByCustomerGuidAsync(leadPayload._PayloadHeader.CmcCustomerGuidC, logCommand);
-                var existingLeadList = existingLeadEnum.ToList();
+                var existingLeadEnumerable = await _leadRepository.GetLeadByCustomerGuidAsync(leadPayload._PayloadHeader.CmcCustomerGuidC, logCommand);
+                var existingLeadList = existingLeadEnumerable.ToList();
                 if (!existingLeadList.Any())
                 {
                     throw new Exception($"Attempting to update Lead where CustomerGuid =  {leadPayload._PayloadHeader.CmcCustomerGuidC} but lead was not found ");

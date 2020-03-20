@@ -254,11 +254,6 @@
       <Version>4.5.1</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="response.pdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -2,8 +2,8 @@ using Dapper;
 using Shared.Entities;
 using DataAccess.Infrastructure;
 using System;
-using System.Diagnostics;
 using System.Threading.Tasks;
+using DataAccess.Repositories.Interfaces;
 
 namespace DataAccess.Repositories
 {

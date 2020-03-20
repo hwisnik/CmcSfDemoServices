@@ -1,9 +1,8 @@
-using DataAccess.Repositories.Interfaces;
-using Shared.Entities;
 using System;
 using System.Threading.Tasks;
+using Shared.Entities;
 
-namespace DataAccess.Repositories
+namespace DataAccess.Repositories.Interfaces
 {
     public interface IHttpLoggerRepository : IGenericRepository<ApiPacket>
     {

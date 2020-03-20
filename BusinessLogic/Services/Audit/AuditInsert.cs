@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using DataAccess.SFInterfaces;
-using DataAccess.SFRepositories;
+using DataAccess.Repositories.Interfaces;
 using Shared.Commands;
 using Shared.Entities.CDCClient;
 using Shared.EventPayloads;

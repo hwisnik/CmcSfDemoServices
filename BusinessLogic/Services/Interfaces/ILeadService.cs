@@ -9,10 +9,7 @@ namespace BusinessLogic.Services.Interfaces
     public interface ILeadService
     {
 
-        Task<GenericServiceResponse> GetLead(Guid leadGuid,
-            LogCommand logCommand);
-
-        Task<GenericServiceResponse> GetMeAGuidPlease(LogCommand logCommand);
+        Task<GenericServiceResponse> GetLead(Guid leadGuid,LogCommand logCommand);
 
         Task<GenericServiceResponse> GetLead(Shared.Entities._SearchCriteria.Client.SearchLeadSimple LeadSearcher,LogCommand logCommand);
 

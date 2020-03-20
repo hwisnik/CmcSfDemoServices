@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using BusinessLogic.Services.Interfaces;
-using DataAccess.SFInterfaces;
+using DataAccess.Repositories.Interfaces;
 using log4net;
 using Shared.Commands;
 using Shared.Entities.CDCClient;

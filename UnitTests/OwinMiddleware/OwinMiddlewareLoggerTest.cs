@@ -25,6 +25,7 @@ using System.Reflection;
 using System.Collections.Specialized;
 using System.Diagnostics.CodeAnalysis;
 using BusinessLogic.Services.Interfaces;
+using DataAccess.Repositories.Interfaces;
 using Shared.Commands;
 using Shared.Handlers;
 
