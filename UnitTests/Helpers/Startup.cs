@@ -1,5 +1,5 @@
-﻿using CmcSfRestServices.Filters;
-using CmcSfRestServices.Owin;
+﻿using CmcSfDemoServices.Filters;
+using CmcSfDemoServices.Owin;
 using DataAccess.Infrastructure;
 using DataAccess.Repositories;
 using Shared.Logger;
@@ -18,7 +18,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Dispatcher;
 using System.Web.Http.ExceptionHandling;
-using CmcSfRestServices.Providers;
+using CmcSfDemoServices.Providers;
 using Shared.Commands;
 using Shared.Handlers;
 

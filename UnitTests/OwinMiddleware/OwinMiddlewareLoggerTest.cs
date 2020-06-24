@@ -5,7 +5,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using CmcSfRestServices.Owin;
+using CmcSfDemoServices.Owin;
 using DataAccess.Infrastructure;
 using DataAccess.Repositories;
 using Shared.Logger;

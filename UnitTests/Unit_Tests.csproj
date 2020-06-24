@@ -165,9 +165,9 @@
       <Project>{5a29dd8d-75ef-486f-8964-f879d1c5e557}</Project>
       <Name>BusinessLogic</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CmcSfRestServices\_CmcSfRestServices.csproj">
-      <Project>{EC7D54D4-49D7-4359-AC9E-7BD0922CA14C}</Project>
-      <Name>_CmcRestServices</Name>
+    <ProjectReference Include="..\CmcSfDemoServices\_CmcSfDemoServices.csproj">
+      <Project>{ec7d54d4-49d7-4359-ac9e-7bd0922ca14c}</Project>
+      <Name>_CmcSfDemoServices</Name>
     </ProjectReference>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
       <Project>{06407bf4-edef-46c3-9542-4b0c2a2ff5ae}</Project>
